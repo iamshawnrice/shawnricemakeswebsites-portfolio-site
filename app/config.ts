@@ -1,16 +1,14 @@
 export const metaData = {
-  baseUrl: "https://nextfolio-template.vercel.app/",
-  title: "Nextfolio",
+  baseUrl: "https://shawnricemakeswebsites.com",
+  title: "Shawn Rice | Makes Websites",
   name: "Sirius",
-  ogImage: "/opengraph-image.png",
+  ogImage: "/headshot.jpg",
   description:
-    "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.",
+    "A frontend-focused Senior Software Engineer who believes in simplicity, the power of mentorship, the importance of code-review, the necessity of test coverage, and that every decision should be made with the user in mind. Based in Charleston, SC.",
 };
 
 export const socialLinks = {
-  twitter: "https://x.com/1tssirius",
-  github: "https://github.com/1msirius/Nextfolio",
-  instagram: "https://www.instagram.com/",
+  github: "https://github.com/iamshawnrice",
   linkedin: "https://www.linkedin.com/",
-  email: "mailto:example@gmail.com",
+  email: "mailto:iamshawnrice@gmail.com",
 };
