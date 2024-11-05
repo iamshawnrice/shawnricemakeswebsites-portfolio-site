@@ -2,14 +2,11 @@
 
 import React from "react";
 import {
-  FaXTwitter,
   FaGithub,
-  FaInstagram,
-  FaRss,
   FaLinkedinIn,
 } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
-import { metaData, socialLinks } from "app/config";
+import { socialLinks } from "app/config";
 
 const YEAR = new Date().getFullYear();
 
@@ -27,9 +24,6 @@ function SocialLinks() {
       <SocialLink href={socialLinks.github} icon={FaGithub} />
       <SocialLink href={socialLinks.linkedin} icon={FaLinkedinIn} />
       <SocialLink href={socialLinks.email} icon={TbMailFilled} />
-      <a href="/rss.xml" target="_self">
-        <FaRss />
-      </a>
     </div>
   );
 }
