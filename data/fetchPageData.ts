@@ -1,13 +1,14 @@
 import { sql } from "@vercel/postgres";
+import { PageContentT, PageDataT } from "types";
 
-type PageData = {
-    id: string;
-    content: string;
-    title: string;
+type PageQueryRow = {
+    page_id: string;
+    page_content: PageContentT[];
+    page_title: string;
 }
 
-export const fetchPageData = async (pageId: string) => {
-  const result = await sql`
+export const fetchPageData = async (pageId: string): Promise<PageDataT> => {
+  const result = await sql<PageQueryRow>`
     SELECT * FROM Pages
     WHERE page_id = ${pageId};
   `;
