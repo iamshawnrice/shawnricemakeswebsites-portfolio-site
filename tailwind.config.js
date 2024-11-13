@@ -19,4 +19,16 @@ module.exports = {
     },
   },
   plugins: [require("@tailwindcss/typography")],
+  safelist: [
+    "block",
+    "lg:mb-5",
+    "lg:mt-5",
+    "mb-10",
+    "mt-0",
+    "mx-auto",
+    "rounded-full",
+    "sm:float-right",
+    "sm:mb-5",
+    "sm:ml-5",
+  ],
 };

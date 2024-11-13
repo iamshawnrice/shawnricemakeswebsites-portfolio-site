@@ -6,11 +6,13 @@ type ImageT = {
 }
 
 export type PageContentT = {
+    className?: string;
     content: ImageT;
     tag: "img";
 } | {
+    className?: string;
     content: string;
-    tag: "p"
+    tag: "p" | "h2" | "h3"
 }
 
 export type PageDataT = {
