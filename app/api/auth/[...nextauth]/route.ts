@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import GoogleProvider, { GoogleProfile } from "next-auth/providers/google";
+import GoogleProvider from "next-auth/providers/google";
 import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "lib/constants";
 
 const handler = NextAuth({
@@ -7,14 +7,6 @@ const handler = NextAuth({
     GoogleProvider({
       clientId: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      profile(profile: GoogleProfile) {
-        const { email, id } = profile;
-
-        return {
-          email,
-          id,
-        };
-      },
     }),
   ],
   callbacks: {
