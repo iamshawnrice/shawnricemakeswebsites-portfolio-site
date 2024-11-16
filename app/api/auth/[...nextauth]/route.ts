@@ -1,6 +1,10 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } from "lib/constants";
+import {
+  AUTH_EMAIL_WHITELIST,
+  GOOGLE_CLIENT_ID,
+  GOOGLE_CLIENT_SECRET,
+} from "lib/constants";
 
 const handler = NextAuth({
   providers: [
@@ -11,8 +15,8 @@ const handler = NextAuth({
   ],
   callbacks: {
     async signIn({ account, profile }) {
-      if (account?.provider === "google" && profile) {
-        return profile.email === "iamshawnrice@gmail.com";
+      if (account?.provider === "google" && profile?.email) {
+        return AUTH_EMAIL_WHITELIST.split(" ").includes(profile.email);
       }
 
       return false;
