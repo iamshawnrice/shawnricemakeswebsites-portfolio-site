@@ -1,4 +1,5 @@
 import Image from "next/image";
+import reactHtmlParser from "react-html-parser";
 import { PageContentT } from "types";
 
 export const PageContent = ({ content }: { content: PageContentT[] }) => {
@@ -25,8 +26,7 @@ export const PageContent = ({ content }: { content: PageContentT[] }) => {
             const Tag = tag;
             return <Tag className={className}>{content}</Tag>;
           case "p":
-            const markup = { __html: content };
-            return <p className={className} dangerouslySetInnerHTML={markup} />;
+            return <p className={className}>{reactHtmlParser(content)}</p>;
           default:
             break;
         }
