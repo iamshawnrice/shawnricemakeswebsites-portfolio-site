@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model pages {
+  meta_title       String?  @db.VarChar(255)
+  meta_description String?
+  page_title       String?  @db.VarChar(255)
+  page_id          String   @id @db.VarChar(100)
+  is_home_page     Boolean?
+  page_content     Json?
+}
