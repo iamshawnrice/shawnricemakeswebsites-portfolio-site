@@ -11,15 +11,17 @@ export const PageContent = ({ content }: { content: PageContentT[] }) => {
         switch (tag) {
           case "img":
             return (
-              <Image
-                src={content.src}
-                alt={content.alt}
-                className={className}
-                unoptimized
-                width={content.width}
-                height={content.height}
-                priority
-              />
+              <div className="flex justify-center">
+                <Image
+                  src={content.src}
+                  alt={content.alt}
+                  className="mb-8 rounded-full"
+                  unoptimized
+                  width={240}
+                  height={240}
+                  priority
+                />
+              </div>
             );
           case "h2":
           case "h3":

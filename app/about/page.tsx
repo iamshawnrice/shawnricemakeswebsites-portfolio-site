@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const { title, content } = await fetchPageById("about");
+  const { content } = await fetchPageById("about");
 
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">{title}</h1>
-
-      <PageContent content={content} />
+      <div className="m-auto max-w-2xl text-center">
+        <PageContent content={content} />
+      </div>
     </section>
   );
 }
