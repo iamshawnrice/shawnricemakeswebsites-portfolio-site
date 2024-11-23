@@ -2,18 +2,20 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <section>
+    <section className="m-auto max-w-2xl">
+      <div className="text-center mb-4">
         <Image
           src="/headshot.jpg"
           alt="Profile photo"
-          className="rounded-full bg-gray-100 block lg:mt-5 mt-0 lg:mb-5 mb-10 mx-auto sm:float-right sm:ml-5 sm:mb-s"
+          className="rounded-full mx-auto"
           unoptimized
           width={240}
           height={240}
           priority
         />
+      </div>
 
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">
+      <h1 className="mb-8 text-2xl font-medium text-center tracking-tight">
         Hi. I'm Shawn Rice.
       </h1>
 
@@ -214,10 +216,10 @@ export default function Page() {
             management expertise to its clients. It is also a great place to
             work. I had the opportunity to contribute in meaningful ways to
             products that help people while collaborating with team members that
-            are literally all over the planet. It taught me so much about
-            the importance of clarity in both written and verbal communication,
-            the effectiveness of linters and coding standards to keep everyone
-            on the same page, and the power of distributed teams.
+            are literally all over the planet. It taught me so much about the
+            importance of clarity in both written and verbal communication, the
+            effectiveness of linters and coding standards to keep everyone on
+            the same page, and the power of distributed teams.
           </p>
         </div>
 
@@ -254,7 +256,16 @@ export default function Page() {
             </small>
           </header>
 
-          <p>After three years in the enterprise world, I had the itch to move fast. That's how I found Artisan Studios; a consultancy positively brimming with intelligent, passionate people who are great at what they do. My time with Artisan has given me the opportunity to get hands-on experience with AWS and Next.js. And I have had the pleasure of working with one of the biggest brands in fast-service restaurants (hint: it's the one who's marketing team is seemingly run by semi-literate cows).</p>
+          <p>
+            After three years in the enterprise world, I had the itch to move
+            fast. That's how I found Artisan Studios; a consultancy positively
+            brimming with intelligent, passionate people who are great at what
+            they do. My time with Artisan has given me the opportunity to get
+            hands-on experience with AWS and Next.js. And I have had the
+            pleasure of working with one of the biggest brands in fast-service
+            restaurants (hint: it's the one who's marketing team is seemingly
+            run by semi-literate cows).
+          </p>
         </div>
       </div>
     </section>

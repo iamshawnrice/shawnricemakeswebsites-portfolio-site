@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import React from "react";
-import { fetchPageData } from "data/fetchPageData";
+import { fetchPageById } from "data/page";
 import { PageContent } from "components/PageContent";
 
 export const metadata: Metadata = {
@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const { title, content } = await fetchPageData("about");
+  const { content } = await fetchPageById("about");
 
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">{title}</h1>
-
-      <PageContent content={content} />
+      <div className="m-auto max-w-2xl text-center">
+        <PageContent content={content} />
+      </div>
     </section>
   );
 }

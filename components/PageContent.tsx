@@ -1,4 +1,5 @@
 import Image from "next/image";
+import reactHtmlParser from "react-html-parser";
 import { PageContentT } from "types";
 
 export const PageContent = ({ content }: { content: PageContentT[] }) => {
@@ -10,23 +11,24 @@ export const PageContent = ({ content }: { content: PageContentT[] }) => {
         switch (tag) {
           case "img":
             return (
-              <Image
-                src={content.src}
-                alt={content.alt}
-                className={className}
-                unoptimized
-                width={content.width}
-                height={content.height}
-                priority
-              />
+              <div className="flex justify-center">
+                <Image
+                  src={content.src}
+                  alt={content.alt}
+                  className="mb-8 rounded-full"
+                  unoptimized
+                  width={240}
+                  height={240}
+                  priority
+                />
+              </div>
             );
           case "h2":
           case "h3":
             const Tag = tag;
             return <Tag className={className}>{content}</Tag>;
           case "p":
-            const markup = { __html: content };
-            return <p className={className} dangerouslySetInnerHTML={markup} />;
+            return <p className={className}>{reactHtmlParser(content)}</p>;
           default:
             break;
         }

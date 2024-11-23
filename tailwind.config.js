@@ -4,6 +4,10 @@ module.exports = {
   content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./public/**/*.svg"],
   theme: {
     extend: {
+      colors: {
+        "bermuda-gray": "#6b83a6",
+        "brandy-punch": "#ce7829",
+      },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
         mono: ["var(--font-geist-mono)"],
