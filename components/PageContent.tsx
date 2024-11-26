@@ -1,17 +1,17 @@
 import Image from "next/image";
-import reactHtmlParser from "react-html-parser";
+import parse from "html-react-parser";
 import { PageContentT } from "types";
 
 export const PageContent = ({ content }: { content: PageContentT[] }) => {
   return (
     <div className="prose prose-neutral dark:prose-invert">
-      {content.map((block) => {
+      {content.map((block, i) => {
         const { className, content, tag } = block;
 
         switch (tag) {
           case "img":
             return (
-              <div className="flex justify-center">
+              <div className="flex justify-center" key={i}>
                 <Image
                   src={content.src}
                   alt={content.alt}
@@ -26,9 +26,17 @@ export const PageContent = ({ content }: { content: PageContentT[] }) => {
           case "h2":
           case "h3":
             const Tag = tag;
-            return <Tag className={className}>{content}</Tag>;
+            return (
+              <Tag className={className} key={i}>
+                {content}
+              </Tag>
+            );
           case "p":
-            return <p className={className}>{reactHtmlParser(content)}</p>;
+            return (
+              <p className={className} key={i}>
+                {parse(content)}
+              </p>
+            );
           default:
             break;
         }

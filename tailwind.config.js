@@ -22,7 +22,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("daisyui")],
   safelist: [
     "block",
     "lg:mb-5",
