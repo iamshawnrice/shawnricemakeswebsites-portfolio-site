@@ -7,6 +7,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// to be removed once content is rebuilt using Page model
 model pages {
   meta_title       String?  @db.VarChar(255)
   meta_description String?
