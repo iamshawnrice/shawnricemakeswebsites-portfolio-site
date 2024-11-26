@@ -15,3 +15,14 @@ model pages {
   is_home_page     Boolean?
   page_content     Json?
 }
+
+model Page {
+  id              String   @id @db.VarChar(100)
+  title           String?  @db.VarChar(255)
+  content         Json?
+  createdAt       DateTime?
+  createdBy       String?
+  lastModified    DateTime?
+  lastModifiedBy  String?
+  meta            Json?
+}
