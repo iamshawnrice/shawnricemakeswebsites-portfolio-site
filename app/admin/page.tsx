@@ -1,4 +1,5 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { Button } from "app/components/ui/button";
+import { HStack } from "@chakra-ui/react";
 
 export default function Admin() {
   return (
