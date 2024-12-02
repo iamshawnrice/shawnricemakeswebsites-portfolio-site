@@ -2,12 +2,12 @@ import "./global.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Navbar } from "./components/nav";
+import { Navbar } from "app/components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
-import { ThemeProvider } from "./components/theme-switch";
-import { metaData } from "./config";
+import Footer from "app/components/footer";
+import { ThemeProvider } from "app/components/theme-switch";
+import { metaData } from "app/config";
 
 export const metadata: Metadata = {
   metadataBase: new URL(metaData.baseUrl),
