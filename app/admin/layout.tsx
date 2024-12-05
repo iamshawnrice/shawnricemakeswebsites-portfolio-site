@@ -1,4 +1,4 @@
-import { Provider } from "app/components/ui/provider";
+import { Provider } from "lib/components/ui/provider";
 
 export const metadata = {
   title: "Next.js",

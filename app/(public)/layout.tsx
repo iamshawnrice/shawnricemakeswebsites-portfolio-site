@@ -2,11 +2,11 @@ import "./global.css";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Navbar } from "app/components/nav";
+import { Navbar } from "lib/components/nav";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "app/components/footer";
-import { ThemeProvider } from "app/components/theme-switch";
+import Footer from "lib/components/footer";
+import { ThemeProvider } from "lib/components/theme-switch";
 import { metaData } from "app/config";
 
 export const metadata: Metadata = {

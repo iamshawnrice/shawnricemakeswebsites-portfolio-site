@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import React from "react";
 import { fetchPageById } from "data/page";
-import { PageContent } from "app/components/PageContent";
+import { PageContent } from "lib/components/PageContent";
 
 export const metadata: Metadata = {
   title: "About",
