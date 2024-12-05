@@ -1,14 +1,9 @@
-import { Button, HStack } from "@chakra-ui/react";
+import { AdminPageContent } from "lib/components/AdminPageContent";
 
 export default function Admin() {
   return (
-    <section>
-      <h1>Hello from the Admin Page</h1>
-
-      <HStack>
-        <Button>Click me</Button>
-        <Button>Click me</Button>
-      </HStack>
-    </section>
+    <AdminPageContent pageTitle="Admin">
+      <p>Hello from the Admin Home</p>
+    </AdminPageContent>
   );
 }

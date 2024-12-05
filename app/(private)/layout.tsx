@@ -34,7 +34,9 @@ export default function RootLayout({
           <Provider>
             <main>
               <AdminNav />
-              <div>{children}</div>
+              <div className="p-4">
+                <div className="bg-white dark:bg-black p-4">{children}</div>
+              </div>
             </main>
           </Provider>
         </ThemeProvider>
