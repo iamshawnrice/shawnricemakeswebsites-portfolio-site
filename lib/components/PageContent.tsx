@@ -1,6 +1,6 @@
 import Image from "next/image";
-import parse from "html-react-parser";
 import { PageContentT } from "types";
+import { parseHTML } from "lib/utils/stringUtils";
 
 export const PageContent = ({ content }: { content: PageContentT[] }) => {
   return (
@@ -34,7 +34,7 @@ export const PageContent = ({ content }: { content: PageContentT[] }) => {
           case "p":
             return (
               <p className={className} key={i}>
-                {parse(content)}
+                {parseHTML(content)}
               </p>
             );
           default:
