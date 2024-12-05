@@ -58,7 +58,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <main className="flex-auto flex flex-col w-full">
-            <header className="flex-grow-0">
+            <header className="flex-grow-0 border-b-slate-600">
               <Navbar />
             </header>
             <div className="flex-grow">{children}</div>
