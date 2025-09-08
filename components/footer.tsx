@@ -13,14 +13,14 @@ export function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
           <Button variant="outline" size="lg" asChild>
-            <a href="mailto:hello@shawnricemakeswebsites.com" className="flex items-center gap-2">
+            <a href="mailto:iamshawnrice@gmail.com" className="flex items-center gap-2">
               <Mail className="h-5 w-5" />
-              hello@shawnricemakeswebsites.com
+              iamshawnrice@gmail.com
             </a>
           </Button>
           <Button variant="outline" size="lg" asChild>
             <a
-              href="https://github.com/shawnrice"
+              href="https://github.com/iamshawnrice"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
@@ -31,7 +31,7 @@ export function Footer() {
           </Button>
           <Button variant="outline" size="lg" asChild>
             <a
-              href="https://linkedin.com/in/shawnrice"
+              href="https://linkedin.com/in/iamshawnrice"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2"
