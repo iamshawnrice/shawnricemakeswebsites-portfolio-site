@@ -152,7 +152,7 @@ export function Timeline() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 timeline-line bg-[rgba(237,234,226,1)]"></div>
+          <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-(--muted-foreground)"></div>
 
           <div className="space-y-12">
             {timelineData.map((entry, index) => (
