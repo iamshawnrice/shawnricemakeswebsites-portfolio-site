@@ -140,7 +140,7 @@ export function Timeline() {
 
   return (
     <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl sm:text-5xl font-serif font-bold text-balance mb-6">
             My <span className="text-[var(--srmw-blue)]">Journey</span>
@@ -158,9 +158,8 @@ export function Timeline() {
             {timelineData.map((entry, index) => (
               <div
                 key={entry.id}
-                className={`timeline-item timeline-fade-in relative flex items-center ${
-                  index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
-                }`}
+                className={`timeline-item timeline-fade-in relative flex items-center ${index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
+                  }`}
               >
                 {/* Timeline dot */}
                 <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
@@ -182,7 +181,7 @@ export function Timeline() {
                           <Badge
                             key={tech}
                             variant="secondary"
-                            className="bg-muted text-muted-foreground hover:bg-muted/80 transition-colors"
+                            className="bg-muted text-(--srmw-blue) hover:bg-muted/80 transition-colors"
                           >
                             {tech}
                           </Badge>

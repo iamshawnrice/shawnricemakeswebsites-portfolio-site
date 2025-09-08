@@ -10,7 +10,7 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <div className="mb-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-balance mb-6 leading-tight">
             <span className="text-foreground">Shawn</span> <span className="text-slate-400">Rice</span>
