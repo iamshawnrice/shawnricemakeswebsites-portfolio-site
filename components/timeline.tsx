@@ -7,108 +7,105 @@ import { Badge } from "@/components/ui/badge"
 interface TimelineEntry {
   id: string
   title: string
-  company: string
+  company?: string
   period: string
   description: string
-  technologies: string[]
+  technologies?: string[]
   logo?: string
 }
 
 const timelineData: TimelineEntry[] = [
   {
     id: "fish-out-of-water",
-    title: "Software Engineer",
-    company: "Fish Out of Water",
-    period: "September 2021 - Present",
+    title: "Fish Out of Water",
+    period: "Sometime in 2011",
     description:
-      "Fed up with the every-changing of a theater artist, I was working as a temp agent for a few weeks straight in Branson. One day my boss decided that I should make a website for one of our clients. I had never made a website before, but I was willing to learn. I went to Starbucks, I borrowed a copy of Dreamweaver and a book on HTML. Within a week we had a perfectly terrible first I page site up and running. Lucky for me, it was what those in the world of electronic literature refer to as the 'hooking incident.'",
-    technologies: ["HTML", "CSS", "JavaScript", "Dreamweaver", "Web Design"],
+      "Fed up with the gypsy lifestyle of a theater artist, I was working as a rental agent for a real estate broker in Brooklyn. One day my boss decided that I should make a website for one of our new properties (though I had made no indications that I was able to do so). Not one to back away from a challenge, I obtained a copy of Dreamweaver and a book on HTML. Within a week we had a perfectly horrible little 4 page site on our hands. Lucky for me, it worked out: he paid me a couple hundred dollars and immediately asked for another. This was what those in the world of dramatic literature refer to as the ‘Inciting Incident’.",
+    technologies: ["HTML", "CSS"],
   },
   {
     id: "freelancing-across-america",
-    title: "Freelance Web Developer",
-    company: "Freelancing Across America",
-    period: "September 2021 - December 2021",
+    title: "Freelancing Across America",
+    period: "September 2011 - September 2012",
     description:
-      "I drove back and forth from Los Angeles to Minneapolis then Connecticut, Pennsylvania, Maine, and Alaska. I was on Fiverr, and eventually back to New York. All the while designing and building WordPress sites for anyone at any price – my only concern was that every project gave me the opportunity to learn something new. I made sites for actors, singers, musicians, and small businesses. I learned many useful lessons during this time but the two most important were: 1. that my design capabilities were limited and 2. that I needed to learn by working with people who knew more than I did.",
-    technologies: ["WordPress", "PHP", "Fiverr", "Freelancing", "Client Management"],
+      "Once I had a solid grasp on the basics, I decided to bounce around the country for a bit: my travels took me from New York to Minnesota then Connecticut, Pennsylvania, Maine, up to Alaska, down to Florida, and eventually back to New York. All the while designing and building WordPress sites for anyone at any price - my only concern was that every project gave me the opportunity to learn something new. I made sites for actors, singers, voiceover artists, a chocolatier, service providers in the fracking industry, a moving company, and a cross-dressing Rabbi. I learned many many lessons during this time but the two main takeaways were: 1. that my design capabilities were limited and 2. that I wanted to learn by working beneath someone more knowledgeable than myself.",
+    technologies: ["HTML", "CSS", "WordPress"],
   },
   {
     id: "meanwhile-back-in-the-city",
-    title: "Junior Developer",
-    company: "Meanwhile Back in the City",
-    period: "December 2021 - February 2022",
+    title: "Meanwhile Back in the City...",
+    period: "September 2012 - February 2013",
     description:
-      "Upon returning to New York I immediately obtained a steady relationship with Midwest Media Group, a small company specializing in website development and digital marketing. I was able to work on a significant amount of client deliverables to me 3 months there and learned volumes about design from print and web, to round out my skillsets. I helped Dreamweaver with Figma and learned to use the Adobe Creative Suite. I also learned about project management and client communication. This was a great stepping stone to some of Many of the sites were designed their team, but I was able to put my new design skills to work and contributed designs to several out of the thirteen sites I did for them. Some of my favorites include Baking Mixes, Hatch the Hen Bed, and Cove Inn.",
-    technologies: ["Figma", "Adobe Creative Suite", "Project Management", "Client Communication", "Design"],
+      "Upon returning to New York, I immediately obtained a design internship with Magnet Media Films - a video production company based in Manhattan. I was able to contribute to a significant amount of client deliverables in my 3 months there and learned volumes about design for both print and web. To round out my schedule, I began freelancing with King Features Syndicate - the company which manages the rights to just about every comic strip you might be able to think of. Many of the sites were designed by their team, but I was able to put my new design skills to work and contributed designs to almost half of the fifteen sites I did for them. Some of my favorites include Beetle Bailey, Hagar the Horrible, and Olive Oyl.",
+    technologies: ["HTML", "CSS", "WordPress", "Illustrator", "Photoshop"],
   },
   {
     id: "different-kind-of-agency",
-    title: "Full Stack Developer",
-    company: "A Different Kind of Agency",
-    period: "February 2022 - July 2024",
+    title: "A Different Kind of Agency",
+    company: "Different Perspective",
+    period: "February 2013 - July 2014",
     description:
-      "During the year of Hawaii, I reconnected with a long-time friend from college who convinced me to move back to France and become her husband. Well, I may not have shared out the same way, but I did move to France and we did get married. I was able to work remotely for Cyndia, married a business girl named Heather, and began working for a full-service creative agency called Different Perspectives. My time at Different Perspectives gave me the opportunity to work on a wide variety of projects, from simple brochure sites to complex ecommerce, and showed me how to manage relationships with clients. It also taught me that being the most in-demand about documentation is a key ingredient to front-end development and success.",
-    technologies: ["React", "Node.js", "E-commerce", "Remote Work", "Full Stack Development"],
+      "During my year of travel, I reconnected with a long time friend from college who convinced me to move back to Florida and become her husband. Well...it may not have played out exactly like that, but that‘s a story for a different time. The important detail is that I returned to Florida, married a fantastic girl named Heather, and began working for a full-service creative agency called Different Perspective. My time at Different Perspective gave me experience with multi language sites, introduced me to the exciting world of ecommerce, and showed me how to manage relationships with clients. It also taught me that taking the time to compose good documentation is a tiny investment up front that saves hours and hours of emails and consultation down the road.",
+    technologies: ["HTML", "CSS", "WordPress", "jQuery", "Hosting", "Illustrator", "Photoshop"],
   },
   {
     id: "theres-no-i-in-team",
-    title: "Senior Developer",
-    company: "There's No I in Team",
-    period: "July 2024 - February 2025",
+    title: "There's No I in Team",
+    company: "Izea / Junyo",
+    period: "July 2014 - February 2016",
     description:
-      "The agency work was fast-paced and exciting, but I felt as though I was missing out by being the only developer at the room. I said I'm sure that was a red space working with two great interns at Spa and Jovan. I learned the importance of code standards, how the development team worked together, and how to be a mentor. I also learned about git with a great variety of technologies including Ruby on Rails, Bootstrap, Django, Barcelona, Angular, Handlebars and a slew lot of things. It was truly inspiring to be surrounded by so many bright minds and to be able to learn from them.",
-    technologies: ["Ruby on Rails", "Bootstrap", "Django", "Angular", "Handlebars", "Git", "Team Leadership"],
+      "The agency work was fast paced and exciting, but I felt as though I was missing out by being the only developer in the room. I spent the next two and a half years working with two great teams at Izea and Junyo. I learned the importance of code standards, the fine art of collaboration via GitHub, and the pain of tech debt. I had the opportunity to work with a great variety of technologies including Ruby on Rails, Bootstrap, Django, Backbone, Angular, Highcharts and a little bit of Node. It was truly inspiring to be surrounded by so many people who were committed to pushing their skills further and doing good work.",
+    technologies: ["HTML", "CSS", "JavaScript", "Ruby on Rails", "Bootstrap", "Django"],
   },
   {
     id: "ecommerce-in-the-holy-city",
-    title: "E-commerce Developer",
-    company: "Ecommerce in the Holy City",
-    period: "February 2025 - December 2025",
+    title: "Ecommerce in the Holy City",
+    company: "Blue Acorn (now Blue Acorn iCi)",
+    period: "February 2016 - December 2018",
     description:
-      "Seeking to add more Ecommerce and we had our family relocated and I was the one of Charleston. It was a big year. The Shopify experts and we had successfully, the ecommerce restaurants made it the perfect place to settle down and start a family. Bigg down from Blue Acorn CI gave me the opportunity to work on a great team with some high-profile clients. I learned a lot about Shopify and Magento. I also learned about performance and with great many variables – working within the e-commerce space became, I'm the one to secure with great many variables – working within the e-commerce space became, I'm the one to secure.",
-    technologies: ["Shopify", "Magento", "E-commerce", "Performance Optimization", "High-Profile Clients"],
+      "Seeking an exit from Florida before we started our family, Heather and I felt the pull of Charleston in a big way - the thriving tech scene, active music community, and phenomenal restaurants made it the perfect place to settle down and start a family. Blue Acorn (now Blue Acorn iCi) gave me the opportunity to work on a great team with some high profile clients via the Salesforce Commerce Cloud platform. It was also the first time I worked with proprietary software - instilling within me a profound appreciation for the open source world.",
+    technologies: ["HTML", "CSS", "JavaScript", "Salesforce Commerce Cloud"],
   },
   {
     id: "talking-to-the-future",
-    title: "AI/ML Engineer",
-    company: "Talking to the Future",
-    period: "December 2025 - February 2026",
+    title: "Talking to the Future",
+    company: "XAPPMedia",
+    period: "December 2018 - February 2020",
     description:
-      "I realize this I was being left behind by a rapidly evolving industry. I set upon learning React, Redux, and TypeScript in my spare time. As soon as I had a firm grasp on them, I landed a position that would elevate my skills around jQuery's advanced server-rendered apps. And that is how I found ADMIRABLE HAPPINESS 3 looking to deliver what a business with modern technology solutions. I was able to work with a great team of developers who became thoroughly interested in the entire lifecycle of the modern development stack: from wireframing and defining requirements, to development and testing, all the way to deployment and QA.",
-    technologies: ["React", "Redux", "TypeScript", "jQuery", "Server-Side Rendering", "Full Lifecycle Development"],
+      "Feeling like I was being left behind by a rapidly evolving industry, I set upon learning React, Redux, and Typescript in my spare time. As soon as I had a firm grasp on them, I sought a position that would elevate my skills beyond jQuery enhanced server-rendered apps. And that is how I found XAPPMedia. XAPPMedia is helping to define what is possible with voice-powered software (Siri, Alexa, and Google Assistant). During my time with them, I became thoroughly immersed in the entire lifecycle of the modern development stack: from wireframing and defining requirements, to development and testing, all the way to deployment via CICD.",
+    technologies: ["React", "Redux", "TypeScript", "Jest"],
   },
   {
     id: "tying-it-all-together",
-    title: "Senior Full Stack Engineer",
-    company: "Tying it all Together",
-    period: "March 2026 - September 2026",
+    title: "Tying it all Together",
+    company: "Mokriya (now Nagarro)",
+    period: "March 2020 - September 2020",
     description:
-      "An opportunity to work with a long-time mentor presented itself and I had to jump at the chance to work with someone who had been instrumental in my growth as a developer and project management expertise to my clients. It is also a great place to learn. I had the opportunity to build those a meaningful ways to products that help people solve real problems. I learned a lot about the importance of user experience and how to build products that are both beautiful and functional. I also learned a lot about the importance of testing and how to build products that are reliable and maintainable. I learned a lot about the importance of clarity in both written and verbal communication, and the effectiveness of clarity and caring standards to keep everyone on the same page, and the power of distributed teams.",
-    technologies: ["User Experience", "Product Development", "Testing", "Communication", "Distributed Teams"],
+      "An opportunity to work with a long-time mentor presented itself and I had to jump at the chance. Mokriya is a globally distributed consultancy that provides design, development, and project management expertise to its clients. It is also a great place to work. I had the opportunity to contribute in meaningful ways to products that help people while collaborating with team members that are literally all over the planet. It taught me so much about the importance of clarity in both written and verbal communication, the effectiveness of linters and coding standards to keep everyone on the same page, and the power of distributed teams.",
+    technologies: ["Vue/Nuxt", "TypeScript", "GraphQL"],
   },
   {
     id: "hitting-the-mark",
-    title: "Lead Developer",
-    company: "Hitting the Mark",
-    period: "September 2026 - December 2023",
+    title: "Hitting the Mark",
+    company: "Mark43",
+    period: "September 2020 - November 2023",
     description:
-      "After my project with Mandala was complete, I decided to work on something big. Like, mission-critical. The saving, make the world a better place, big. Enter MARKS. During my time there I have learned how to masterfully these significant changes to see that code performance, maintainability, and scalability are all key factors in building great software. I have also learned how to work with a team of developers to build products that are both informative questions, and how to juggle tech debt, user experience, and just plain getting things done. It was by far the most challenging role I have faced in my career, but also the most fulfilling.",
-    technologies: ["Mission-Critical Systems", "Performance", "Scalability", "Tech Debt Management", "Leadership"],
+      "After my project with Mokriya was complete, I wanted to work on something big. Like mission-critical, life-saving, make the world a better place, big. Enter Mark43. During my time here, I have learned how to responsibly make significant changes to an app that runs 24/7, the value of mentorship for both the mentor and mentee, what to look for when interviewing candidates, and how to juggle tech debt, user-experience, and just plain getting things done. It was by far the most challenging role I had faced in my career, but also the most fulfilling.",
+    technologies: ["React", "TypeScript", "Redux", "Jest"],
   },
   {
     id: "move-fast-and-ship-things",
-    title: "Principal Engineer",
-    company: "Move Fast and Ship Things",
+    title: "Move Fast and Ship Things",
+    company: "Artisan Studios",
     period: "November 2023 - This Very Day",
     description:
-      "After three years in the enterprise world, I had the itch to move fast. That's how I found Artisan Studios, a consultancy journeying tomorrow with intelligent, passionate people who are great at what they do. My time at Artisan has given me the opportunity to get serious about the maintainability of clarity in both written and verbal communication, and the effectiveness of clarity and caring standards to keep everyone on the same page, and the power of distributed teams.",
+      "After three years in the enterprise world, I had the itch to move fast. That's how I found Artisan Studios; a consultancy positively brimming with intelligent, passionate people who are great at what they do. My time with Artisan has given me the opportunity to get hands-on experience with AWS and Next.js. And I have had the pleasure of working with one of the biggest brands in fast-service restaurants (hint: it's the one who's marketing team is seemingly run by semi-literate cows).",
     technologies: [
-      "Consulting",
-      "Fast-Paced Development",
-      "Intelligent Teams",
-      "Maintainability",
-      "Communication Standards",
+      "AWS",
+      "Next.js",
+      "Tailwind CSS",
+      "TypeScript",
+      "Vitest",
     ],
   },
 ]
@@ -169,15 +166,17 @@ export function Timeline() {
                   <Card className="bg-card border-border hover:shadow-lg transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="mb-4">
-                        <h3 className="text-xl font-bold text-card-foreground mb-1">{entry.title}</h3>
-                        <h4 className="text-lg font-semibold text-[var(--srmw-blue)] mb-2">{entry.company}</h4>
+                        <h3 className="text-3xl font-serif text-card-foreground mb-1">{entry.title}</h3>
+                        {entry.company && (
+                          <h4 className="text-lg font-semibold text-[var(--srmw-blue)] mb-2">{entry.company}</h4>
+                        )}
                         <p className="text-sm text-accent font-medium">{entry.period}</p>
                       </div>
 
                       <p className="text-muted-foreground leading-relaxed mb-4">{entry.description}</p>
 
                       <div className="flex flex-wrap gap-2">
-                        {entry.technologies.map((tech) => (
+                        {entry.technologies?.map((tech) => (
                           <Badge
                             key={tech}
                             variant="secondary"
