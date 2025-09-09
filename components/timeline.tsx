@@ -143,13 +143,13 @@ export function Timeline() {
             My <span className="text-[var(--srmw-blue)]">Journey</span>
           </h2>
           <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-            My career started in the arts world, so I am well acquainted with communicating and collaborating with people from diverse disciplines and backgrounds. And it has given me a tremendous amount of empathy for non-technical users. However, the journey from under-employed actor/failing real-estate agent to senior-level web developer did not occur overnight. It all started when...
+            My career started in the arts world, so I am well acquainted with communicating and collaborating with people from diverse disciplines and backgrounds. And it has given me a tremendous amount of empathy for non-technical users. However, the path from under-employed actor/failing real-estate agent to senior-level web developer did not occur overnight. It all started when...
           </p>
         </div>
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-(--muted-foreground)"></div>
+          <div className="absolute left-1/2 sm:transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-(--muted-foreground)"></div>
 
           <div className="space-y-12">
             {timelineData.map((entry, index) => (
@@ -159,10 +159,10 @@ export function Timeline() {
                   }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
+                <div className="absolute hidden sm:block left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
 
                 {/* Content */}
-                <div className={`ml-12 sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8" : "sm:pl-8"}`}>
+                <div className={`sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8" : "sm:pl-8"}`}>
                   <Card className="bg-card border-border hover:shadow-lg transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="mb-4">
