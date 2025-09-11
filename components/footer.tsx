@@ -7,8 +7,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto text-center">
         <h3 className="text-2xl font-bold mb-4">Let's Connect</h3>
         <p className="text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-          I'm always interested in new opportunities and collaborations. Feel free to reach out if you'd like to work
-          together or just chat about technology.
+          I'm always interested in expanding my network. Let's connect and maybe we can make something cool together.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
