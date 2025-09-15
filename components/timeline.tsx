@@ -165,11 +165,11 @@ export function Timeline() {
             {timelineData.map((entry, index) => (
               <div
                 key={entry.id}
-                className={`timeline-item timeline-fade-in relative flex items-center ${index % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
+                className={`timeline-item timeline-fade-in relative flex items-center flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
               >
                 {entry.image && (
-                  <div className="rounded-full overflow-hidden w-[300px] h-[300px]">
+                  <div className="absolute rounded-full overflow-hidden w-[150px] h-[150px] md:w-[300px] md:h-[300px] md:relative">
                     <Image src={entry.image} alt={entry.title} width={300} height={300} />
                   </div>
                 )}
@@ -179,7 +179,7 @@ export function Timeline() {
 
                 {/* Content */}
                 <div className={`sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8" : "sm:pl-8"}`}>
-                  <Card className="bg-card border-border hover:shadow-lg transition-all duration-300">
+                  <Card className={`bg-card border-border hover:shadow-lg transition-all duration-300  mt-[75px] md:mt-0 md:mt-0 ${entry.image && "pt-[75px] md:pt-0"}`}>
                     <CardContent className="p-6">
                       <div className="mb-4">
                         <h3 className="text-3xl font-serif text-card-foreground mb-1">{entry.title}</h3>
