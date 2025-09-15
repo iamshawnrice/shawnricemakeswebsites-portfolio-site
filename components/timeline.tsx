@@ -199,11 +199,11 @@ export function Timeline() {
                     }`}
                 >
                   {/* Timeline dot */}
-                  <div className="absolute hidden sm:block left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
+                  <div className="absolute hidden md:block left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
 
                   {/* Content */}
-                  <div className={`sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8" : "sm:pl-8"}`}>
-                    <Card className={`bg-card border-border hover:shadow-lg transition-all duration-300  mt-[75px] md:mt-0 ${entry.image && "pt-[75px] md:pt-0"}`}>
+                  <div className={`sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "md:pr-8" : "md:pl-8"}`}>
+                    <Card className={`bg-card border-border hover:shadow-lg transition-all duration-300 mt-[75px] md:mt-0 ${entry.image && "pt-[75px] md:pt-0"}`}>
                       <CardContent className="p-6">
                         <div className="mb-4">
                           <h3 className="text-3xl font-serif text-card-foreground mb-1">{entry.title}</h3>
@@ -232,7 +232,7 @@ export function Timeline() {
 
                   {/* Image - positioned on opposite side on md+ screens */}
                   {entry.image && (
-                    <div className={`timeline-image absolute rounded-full overflow-hidden w-[150px] h-[150px] md:w-[300px] md:h-[300px] md:relative md:flex md:items-center md:justify-center opacity-0 transform rotate-y-30 transition-all duration-700 ease-out ${index % 2 === 0 ? "md:ml-8" : "md:mr-8"}`}>
+                    <div className={`timeline-image absolute rounded-full overflow-hidden w-[150px] h-[150px] md:w-[300px] md:h-[300px] md:relative md:flex md:items-center md:justify-center opacity-0 transform rotate-y-30 transition-all duration-300 ${index % 2 === 0 ? "md:ml-8" : "md:mr-8"}`}>
                       <Image src={entry.image} alt={entry.title} width={300} height={300} />
                     </div>
                   )}
