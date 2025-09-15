@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Compass, Github, Linkedin, Mail } from "lucide-react"
+import Image from "next/image"
 
 export function Hero() {
   const scrollToTimeline = () => {
@@ -11,6 +12,9 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto text-center">
+        <div className="mb-8 mx-auto rounded-full overflow-hidden border-2 border-white w-[300px] h-[300px]">
+          <Image src="/images/headshot.jpg" alt="Shawn Rice" width={300} height={300} />
+        </div>
         <div className="mb-8">
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-serif font-bold text-balance mb-6 leading-tight">
             <span className="text-foreground">Shawn</span> <span className="text-slate-400">Rice</span>
