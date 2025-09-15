@@ -122,8 +122,10 @@ const timelineData: TimelineEntry[] = [
 
 export function Timeline() {
   const observerRef = useRef<IntersectionObserver | null>(null)
+  const imageObserverRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
+    // Timeline items observer
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -135,82 +137,111 @@ export function Timeline() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     )
 
+    // Timeline images observer
+    imageObserverRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("image-visible")
+          }
+        })
+      },
+      { threshold: 0.75, rootMargin: "0px 0px -50px 0px" },
+    )
+
     const timelineItems = document.querySelectorAll(".timeline-item");
     timelineItems.forEach((item) => {
       observerRef.current?.observe(item)
     })
 
+    const timelineImages = document.querySelectorAll(".timeline-image");
+    timelineImages.forEach((image) => {
+      imageObserverRef.current?.observe(image)
+    })
+
     return () => {
       observerRef.current?.disconnect()
+      imageObserverRef.current?.disconnect()
     }
   }, [])
 
   return (
-    <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-serif font-bold text-balance mb-6">
-            My <span className="text-[var(--srmw-blue)]">Journey</span>
-          </h2>
-          <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
-            My career started in the arts world, so I am well acquainted with communicating and collaborating with people from diverse disciplines and backgrounds. And it has given me a tremendous amount of empathy for non-technical users. However, the path from under-employed actor/failing real-estate agent to senior-level web developer did not occur overnight. It all started when...
-          </p>
-        </div>
+    <>
+      <style jsx>{`
+        .rotate-y-30 {
+          transform: rotateY(30deg);
+        }
+        .image-visible {
+          opacity: 1 !important;
+          transform: rotateY(0deg) !important;
+        }
+      `}</style>
+      <section id="timeline" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-serif font-bold text-balance mb-6">
+              My <span className="text-[var(--srmw-blue)]">Journey</span>
+            </h2>
+            <p className="text-xl text-muted-foreground text-pretty max-w-2xl mx-auto leading-relaxed">
+              My career started in the arts world, so I am well acquainted with communicating and collaborating with people from diverse disciplines and backgrounds. And it has given me a tremendous amount of empathy for non-technical users. However, the path from under-employed actor/failing real-estate agent to senior-level web developer did not occur overnight. It all started when...
+            </p>
+          </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 sm:transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-(--muted-foreground)"></div>
+          <div className="relative">
+            {/* Timeline line */}
+            <div className="absolute left-1/2 sm:transform sm:-translate-x-1/2 top-0 bottom-0 w-0.5 bg-(--muted-foreground)"></div>
 
-          <div className="space-y-12">
-            {timelineData.map((entry, index) => (
-              <div
-                key={entry.id}
-                className={`timeline-item timeline-fade-in relative flex items-center flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                  }`}
-              >
-                {entry.image && (
-                  <div className="absolute rounded-full overflow-hidden w-[150px] h-[150px] md:w-[300px] md:h-[300px] md:relative">
-                    <Image src={entry.image} alt={entry.title} width={300} height={300} />
+            <div className="space-y-12">
+              {timelineData.map((entry, index) => (
+                <div
+                  key={entry.id}
+                  className={`timeline-item timeline-fade-in relative flex items-center flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                    }`}
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute hidden sm:block left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
+
+                  {/* Content */}
+                  <div className={`sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8" : "sm:pl-8"}`}>
+                    <Card className={`bg-card border-border hover:shadow-lg transition-all duration-300  mt-[75px] md:mt-0 ${entry.image && "pt-[75px] md:pt-0"}`}>
+                      <CardContent className="p-6">
+                        <div className="mb-4">
+                          <h3 className="text-3xl font-serif text-card-foreground mb-1">{entry.title}</h3>
+                          {entry.company && (
+                            <h4 className="text-lg font-semibold text-[var(--srmw-blue)] mb-2">{entry.company}</h4>
+                          )}
+                          <p className="text-sm text-accent font-medium">{entry.period}</p>
+                        </div>
+
+                        <p className="text-muted-foreground leading-relaxed mb-4">{entry.description}</p>
+
+                        <div className="flex flex-wrap gap-2">
+                          {entry.technologies?.map((tech) => (
+                            <Badge
+                              key={tech}
+                              variant="secondary"
+                              className="bg-muted text-(--srmw-blue) hover:bg-muted/80 transition-colors"
+                            >
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
                   </div>
-                )}
 
-                {/* Timeline dot */}
-                <div className="absolute hidden sm:block left-4 sm:left-1/2 sm:transform sm:-translate-x-1/2 w-4 h-4 bg-[var(--srmw-blue)] rounded-full border-4 border-background z-10"></div>
-
-                {/* Content */}
-                <div className={`sm:ml-0 sm:w-1/2 ${index % 2 === 0 ? "sm:pr-8" : "sm:pl-8"}`}>
-                  <Card className={`bg-card border-border hover:shadow-lg transition-all duration-300  mt-[75px] md:mt-0 md:mt-0 ${entry.image && "pt-[75px] md:pt-0"}`}>
-                    <CardContent className="p-6">
-                      <div className="mb-4">
-                        <h3 className="text-3xl font-serif text-card-foreground mb-1">{entry.title}</h3>
-                        {entry.company && (
-                          <h4 className="text-lg font-semibold text-[var(--srmw-blue)] mb-2">{entry.company}</h4>
-                        )}
-                        <p className="text-sm text-accent font-medium">{entry.period}</p>
-                      </div>
-
-                      <p className="text-muted-foreground leading-relaxed mb-4">{entry.description}</p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {entry.technologies?.map((tech) => (
-                          <Badge
-                            key={tech}
-                            variant="secondary"
-                            className="bg-muted text-(--srmw-blue) hover:bg-muted/80 transition-colors"
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-
+                  {/* Image - positioned on opposite side on md+ screens */}
+                  {entry.image && (
+                    <div className={`timeline-image absolute rounded-full overflow-hidden w-[150px] h-[150px] md:w-[300px] md:h-[300px] md:relative md:flex md:items-center md:justify-center opacity-0 transform rotate-y-30 transition-all duration-700 ease-out ${index % 2 === 0 ? "md:ml-8" : "md:mr-8"}`}>
+                      <Image src={entry.image} alt={entry.title} width={300} height={300} />
+                    </div>
+                  )}
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
