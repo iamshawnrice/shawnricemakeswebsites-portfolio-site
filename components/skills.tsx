@@ -12,6 +12,7 @@ interface Skill {
 
 interface Certification {
     name: string
+    focus: string
     image: string
     credlyUrl: string
     issuer: string
@@ -46,19 +47,22 @@ export function Skills() {
             name: "Solutions Architect – Associate",
             issuer: "Amazon Web Services",
             image: "/images/certifications/aws-solutions-architect.png",
-            credlyUrl: "https://www.credly.com/badges/785f7617-3098-4012-855e-4b0f226d8b2f/public_url"
+            credlyUrl: "https://www.credly.com/badges/785f7617-3098-4012-855e-4b0f226d8b2f/public_url",
+            focus: "DynamoDB, Cognito, and Secrets Manager",
         },
         {
             name: "Next.js Foundations",
             issuer: "Vercel",
             image: "/images/certifications/nextjs-foundations.png",
-            credlyUrl: "https://www.credly.com/badges/944505bc-a064-45bd-9ab9-e7dcf7685d69/public_url"
+            credlyUrl: "https://www.credly.com/badges/944505bc-a064-45bd-9ab9-e7dcf7685d69/public_url",
+            focus: "Performant and scalable web applications",
         },
         {
             name: "Vercel Foundations",
             issuer: "Vercel",
             image: "/images/certifications/vercel-foundations.png",
-            credlyUrl: "https://www.credly.com/badges/eca27473-c148-424e-a28c-303c687d5ea8/public_url"
+            credlyUrl: "https://www.credly.com/badges/eca27473-c148-424e-a28c-303c687d5ea8/public_url",
+            focus: "Serverless architecture and deployment",
         }
     ]
 
@@ -141,7 +145,7 @@ export function Skills() {
                                                     {cert.issuer}
                                                 </p>
                                                 <p className="text-[11px] text-muted-foreground italic">
-                                                    Focus: production-grade web platforms
+                                                    Focus: {cert.focus}
                                                 </p>
                                             </div>
                                         </div>
