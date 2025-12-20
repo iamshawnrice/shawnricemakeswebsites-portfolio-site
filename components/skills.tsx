@@ -116,7 +116,7 @@ export function Skills() {
                     <div className="lg:col-span-1">
                         <Card className="h-full">
                             <CardHeader className="pb-2">
-                                <h3 className="text-2xl font-serif">Certifications</h3>
+                                <h3 className="text-2xl font-serif text-center">Current Certifications</h3>
                             </CardHeader>
                             <CardContent className="space-y-10">
                                 {certifications.map(cert => (
