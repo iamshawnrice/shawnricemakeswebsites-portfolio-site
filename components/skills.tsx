@@ -104,7 +104,7 @@ export function Skills() {
                                     </div>
 
                                     {/* Normalized experience bar */}
-                                    <div className="h-2 w-full rounded-full bg-muted overflow-hidden">
+                                    <div className="h-[1px] w-full rounded-full bg-muted overflow-hidden">
                                         <div className="h-full w-full rounded-full bg-gradient-to-r from-[var(--srmw-blue)] to-[var(--srmw-blue)]/70 opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                                     </div>
                                 </div>
